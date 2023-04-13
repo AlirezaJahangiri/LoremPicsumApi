@@ -1,0 +1,286 @@
+<html>
+<head>
+<title>ResponseGetListImages.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ResponseGetListImages.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.picsumapi.model</span>
+
+
+<span class="s1">import com.google.gson.annotations.SerializedName</span>
+
+<span class="s0">class </span><span class="s1">ResponseGetListImages : ArrayList&lt;ResponseGetListImages.RsponseGetListImagesItem&gt;(){</span>
+
+    <span class="s1">data </span><span class="s0">class </span><span class="s1">RsponseGetListImagesItem(</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;alt_description&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">altDescription: String?</span><span class="s0">, </span><span class="s3">// a laptop on a table</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;blur_hash&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">blurHash: String?</span><span class="s0">, </span><span class="s3">// LXJkiv.9xuof~pS6flR*x]V@jYRk</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;color&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">color: String?</span><span class="s0">, </span><span class="s3">// #c0c0c0</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;created_at&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">createdAt: String?</span><span class="s0">, </span><span class="s3">// 2022-08-31T14:36:55Z</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;current_user_collections&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">currentUserCollections: List&lt;Any?&gt;?</span><span class="s0">,</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;description&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">description: Any?</span><span class="s0">, </span><span class="s3">// null</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;height&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">height: Int?</span><span class="s0">, </span><span class="s3">// 5000</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;id&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">id: String?</span><span class="s0">, </span><span class="s3">// lAx4E6Gl06s</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;liked_by_user&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">likedByUser: Boolean?</span><span class="s0">, </span><span class="s3">// false</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;likes&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">likes: Int?</span><span class="s0">, </span><span class="s3">// 663</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;links&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">links: Links?</span><span class="s0">,</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;promoted_at&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">promotedAt: String?</span><span class="s0">, </span><span class="s3">// 2023-04-11T16:13:24Z</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;sponsorship&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">sponsorship: Sponsorship?</span><span class="s0">,</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;topic_submissions&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">topicSubmissions: TopicSubmissions?</span><span class="s0">,</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;updated_at&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">updatedAt: String?</span><span class="s0">, </span><span class="s3">// 2023-04-11T13:34:44Z</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;urls&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">urls: Urls?</span><span class="s0">,</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;user&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">user: User?</span><span class="s0">,</span>
+        <span class="s1">@SerializedName(</span><span class="s2">&quot;width&quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">width: Int? </span><span class="s3">// 4000</span>
+    <span class="s1">) {</span>
+        
+        
+        <span class="s1">data </span><span class="s0">class </span><span class="s1">Links(</span>
+            
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;download&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">download: String?</span><span class="s0">, </span><span class="s3">// https://unsplash.com/photos/lAx4E6Gl06s/download?ixid=Mnw0MzQ3MDF8MXwxfGFsbHwxfHx8fHx8Mnx8MTY4MTIyOTgwMg</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;download_location&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">downloadLocation: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/photos/lAx4E6Gl06s/download?ixid=Mnw0MzQ3MDF8MXwxfGFsbHwxfHx8fHx8Mnx8MTY4MTIyOTgwMg</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;html&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">html: String?</span><span class="s0">, </span><span class="s3">// https://unsplash.com/photos/lAx4E6Gl06s</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;self&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">self: String? </span><span class="s3">// https://api.unsplash.com/photos/lAx4E6Gl06s</span>
+        <span class="s1">)</span>
+    
+        <span class="s1">data </span><span class="s0">class </span><span class="s1">Sponsorship(</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;impression_urls&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">impressionUrls: List&lt;String?&gt;?</span><span class="s0">,</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;sponsor&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">sponsor: Sponsor?</span><span class="s0">,</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;tagline&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">tagline: String?</span><span class="s0">, </span><span class="s3">// Start targeting valuable customers today</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;tagline_url&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">taglineUrl: String? </span><span class="s3">// https://ad.doubleclick.net/ddm/trackclk/N1224323.3286893UNSPLASH/B29258209.358659708;dc_trk_aid=549462680;dc_trk_cid=186410004;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd=</span>
+        <span class="s1">) {</span>
+            
+            <span class="s1">data </span><span class="s0">class </span><span class="s1">Sponsor(</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;accepted_tos&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">acceptedTos: Boolean?</span><span class="s0">, </span><span class="s3">// true</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;bio&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">bio: String?</span><span class="s0">, </span><span class="s3">// The all-in-one Marketing Platform built for growing businesses.</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;first_name&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">firstName: String?</span><span class="s0">, </span><span class="s3">// Mailchimp</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;for_hire&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">forHire: Boolean?</span><span class="s0">, </span><span class="s3">// false</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;id&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">id: String?</span><span class="s0">, </span><span class="s3">// D-bxv1Imc-o</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;instagram_username&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">instagramUsername: String?</span><span class="s0">, </span><span class="s3">// mailchimp</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;last_name&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">lastName: Any?</span><span class="s0">, </span><span class="s3">// null</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;links&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">links: Links?</span><span class="s0">,</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;location&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">location: Any?</span><span class="s0">, </span><span class="s3">// null</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;name&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">name: String?</span><span class="s0">, </span><span class="s3">// Mailchimp</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;portfolio_url&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">portfolioUrl: String?</span><span class="s0">, </span><span class="s3">// https://mailchimp.com/</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;profile_image&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">profileImage: ProfileImage?</span><span class="s0">,</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;social&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">social: Social?</span><span class="s0">,</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;total_collections&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">totalCollections: Int?</span><span class="s0">, </span><span class="s3">// 0</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;total_likes&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">totalLikes: Int?</span><span class="s0">, </span><span class="s3">// 19</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;total_photos&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">totalPhotos: Int?</span><span class="s0">, </span><span class="s3">// 13</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;twitter_username&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">twitterUsername: String?</span><span class="s0">, </span><span class="s3">// Mailchimp</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;updated_at&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">updatedAt: String?</span><span class="s0">, </span><span class="s3">// 2023-04-11T14:12:13Z</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;username&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">username: String? </span><span class="s3">// mailchimp</span>
+            <span class="s1">) {</span>
+                
+                <span class="s1">data </span><span class="s0">class </span><span class="s1">Links(</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;followers&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">followers: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/followers</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;following&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">following: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/following</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;html&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">html: String?</span><span class="s0">, </span><span class="s3">// https://unsplash.com/@mailchimp</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;likes&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">likes: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/likes</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;photos&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">photos: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/photos</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;portfolio&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">portfolio: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/portfolio</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;self&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">self: String? </span><span class="s3">// https://api.unsplash.com/users/mailchimp</span>
+                <span class="s1">)</span>
+    
+                <span class="s1">data </span><span class="s0">class </span><span class="s1">ProfileImage(</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;large&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">large: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/profile-1609545740442-928866556c38image?ixlib=rb-4.0.3&amp;crop=faces&amp;fit=crop&amp;w=128&amp;h=128</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;medium&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">medium: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/profile-1609545740442-928866556c38image?ixlib=rb-4.0.3&amp;crop=faces&amp;fit=crop&amp;w=64&amp;h=64</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;small&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">small: String? </span><span class="s3">// https://images.unsplash.com/profile-1609545740442-928866556c38image?ixlib=rb-4.0.3&amp;crop=faces&amp;fit=crop&amp;w=32&amp;h=32</span>
+                <span class="s1">)</span>
+    
+                <span class="s1">data </span><span class="s0">class </span><span class="s1">Social(</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;instagram_username&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">instagramUsername: String?</span><span class="s0">, </span><span class="s3">// mailchimp</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;paypal_email&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">paypalEmail: Any?</span><span class="s0">, </span><span class="s3">// null</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;portfolio_url&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">portfolioUrl: String?</span><span class="s0">, </span><span class="s3">// https://mailchimp.com/</span>
+                    <span class="s1">@SerializedName(</span><span class="s2">&quot;twitter_username&quot;</span><span class="s1">)</span>
+                    <span class="s0">val </span><span class="s1">twitterUsername: String? </span><span class="s3">// Mailchimp</span>
+                <span class="s1">)</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+    
+        <span class="s1">data </span><span class="s0">class </span><span class="s1">TopicSubmissions(</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;architecture-interior&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">architectureInterior: ArchitectureInterior?</span><span class="s0">,</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;3d-renders&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">dRenders: DRenders?</span>
+        <span class="s1">) {</span>
+            
+            <span class="s1">data </span><span class="s0">class </span><span class="s1">ArchitectureInterior(</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;approved_on&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">approvedOn: String?</span><span class="s0">, </span><span class="s3">// 2023-04-11T13:45:36Z</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;status&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">status: String? </span><span class="s3">// approved</span>
+            <span class="s1">)</span>
+    
+            <span class="s1">data </span><span class="s0">class </span><span class="s1">DRenders(</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;approved_on&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">approvedOn: String?</span><span class="s0">, </span><span class="s3">// 2023-04-11T10:15:43Z</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;status&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">status: String? </span><span class="s3">// approved</span>
+            <span class="s1">)</span>
+        <span class="s1">}</span>
+    
+        <span class="s1">data </span><span class="s0">class </span><span class="s1">Urls(</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;full&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">full: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/photo-1661956602116-aa6865609028?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=Mnw0MzQ3MDF8MXwxfGFsbHwxfHx8fHx8Mnx8MTY4MTIyOTgwMg&amp;ixlib=rb-4.0.3&amp;q=85</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;raw&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">raw: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/photo-1661956602116-aa6865609028?ixid=Mnw0MzQ3MDF8MXwxfGFsbHwxfHx8fHx8Mnx8MTY4MTIyOTgwMg&amp;ixlib=rb-4.0.3</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;regular&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">regular: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/photo-1661956602116-aa6865609028?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw0MzQ3MDF8MXwxfGFsbHwxfHx8fHx8Mnx8MTY4MTIyOTgwMg&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;small&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">small: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/photo-1661956602116-aa6865609028?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw0MzQ3MDF8MXwxfGFsbHwxfHx8fHx8Mnx8MTY4MTIyOTgwMg&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;small_s3&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">smallS3: String?</span><span class="s0">, </span><span class="s3">// https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1661956602116-aa6865609028</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;thumb&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">thumb: String? </span><span class="s3">// https://images.unsplash.com/photo-1661956602116-aa6865609028?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw0MzQ3MDF8MXwxfGFsbHwxfHx8fHx8Mnx8MTY4MTIyOTgwMg&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=200</span>
+        <span class="s1">)</span>
+    
+        <span class="s1">data </span><span class="s0">class </span><span class="s1">User(</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;accepted_tos&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">acceptedTos: Boolean?</span><span class="s0">, </span><span class="s3">// true</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;bio&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">bio: String?</span><span class="s0">, </span><span class="s3">// The all-in-one Marketing Platform built for growing businesses.</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;first_name&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">firstName: String?</span><span class="s0">, </span><span class="s3">// Mailchimp</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;for_hire&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">forHire: Boolean?</span><span class="s0">, </span><span class="s3">// false</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;id&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">id: String?</span><span class="s0">, </span><span class="s3">// D-bxv1Imc-o</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;instagram_username&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">instagramUsername: String?</span><span class="s0">, </span><span class="s3">// mailchimp</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;last_name&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">lastName: String?</span><span class="s0">, </span><span class="s3">// Haimerl</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;links&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">links: Links?</span><span class="s0">,</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;location&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">location: String?</span><span class="s0">, </span><span class="s3">// Taipei</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;name&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">name: String?</span><span class="s0">, </span><span class="s3">// Mailchimp</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;portfolio_url&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">portfolioUrl: String?</span><span class="s0">, </span><span class="s3">// https://mailchimp.com/</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;profile_image&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">profileImage: ProfileImage?</span><span class="s0">,</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;social&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">social: Social?</span><span class="s0">,</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;total_collections&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">totalCollections: Int?</span><span class="s0">, </span><span class="s3">// 0</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;total_likes&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">totalLikes: Int?</span><span class="s0">, </span><span class="s3">// 19</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;total_photos&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">totalPhotos: Int?</span><span class="s0">, </span><span class="s3">// 13</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;twitter_username&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">twitterUsername: String?</span><span class="s0">, </span><span class="s3">// Mailchimp</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;updated_at&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">updatedAt: String?</span><span class="s0">, </span><span class="s3">// 2023-04-11T14:12:13Z</span>
+            <span class="s1">@SerializedName(</span><span class="s2">&quot;username&quot;</span><span class="s1">)</span>
+            <span class="s0">val </span><span class="s1">username: String? </span><span class="s3">// mailchimp</span>
+        <span class="s1">) {</span>
+            
+            <span class="s1">data </span><span class="s0">class </span><span class="s1">Links(</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;followers&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">followers: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/followers</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;following&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">following: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/following</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;html&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">html: String?</span><span class="s0">, </span><span class="s3">// https://unsplash.com/@mailchimp</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;likes&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">likes: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/likes</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;photos&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">photos: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/photos</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;portfolio&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">portfolio: String?</span><span class="s0">, </span><span class="s3">// https://api.unsplash.com/users/mailchimp/portfolio</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;self&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">self: String? </span><span class="s3">// https://api.unsplash.com/users/mailchimp</span>
+            <span class="s1">)</span>
+    
+            <span class="s1">data </span><span class="s0">class </span><span class="s1">ProfileImage(</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;large&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">large: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/profile-1609545740442-928866556c38image?ixlib=rb-4.0.3&amp;crop=faces&amp;fit=crop&amp;w=128&amp;h=128</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;medium&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">medium: String?</span><span class="s0">, </span><span class="s3">// https://images.unsplash.com/profile-1609545740442-928866556c38image?ixlib=rb-4.0.3&amp;crop=faces&amp;fit=crop&amp;w=64&amp;h=64</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;small&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">small: String? </span><span class="s3">// https://images.unsplash.com/profile-1609545740442-928866556c38image?ixlib=rb-4.0.3&amp;crop=faces&amp;fit=crop&amp;w=32&amp;h=32</span>
+            <span class="s1">)</span>
+    
+            <span class="s1">data </span><span class="s0">class </span><span class="s1">Social(</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;instagram_username&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">instagramUsername: String?</span><span class="s0">, </span><span class="s3">// mailchimp</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;paypal_email&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">paypalEmail: Any?</span><span class="s0">, </span><span class="s3">// null</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;portfolio_url&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">portfolioUrl: String?</span><span class="s0">, </span><span class="s3">// https://mailchimp.com/</span>
+                <span class="s1">@SerializedName(</span><span class="s2">&quot;twitter_username&quot;</span><span class="s1">)</span>
+                <span class="s0">val </span><span class="s1">twitterUsername: String? </span><span class="s3">// Mailchimp</span>
+            <span class="s1">)</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

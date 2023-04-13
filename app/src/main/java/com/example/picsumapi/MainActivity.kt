@@ -1,17 +1,17 @@
 package com.example.picsumapi
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.picsumapi.adapter.AdapterImage
 import com.example.picsumapi.databinding.ActivityMainBinding
-import com.example.picsumapi.model.ResponseGetRandomImagesItem
+import com.example.picsumapi.model.ResponseRandomPhotos
 import com.example.picsumapi.server.ApiClient
 import com.example.picsumapi.server.ApiServices
+import com.example.picsumapi.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     //Call image api =>
     private val callImageApi by lazy {
-        api.getRandomImages(3, 100)
+        api.getRandomImages(Constants.CLIENT_ID, 30, "landscape")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,35 +43,56 @@ class MainActivity : AppCompatActivity() {
 
         //InitViews =>
         binding.apply {
-            progressbarMain.visibility = View.VISIBLE
+
+            //set Visibilities =>
+            recyclerMain.visibility = View.GONE
             txtEmptyState.visibility = View.GONE
-            callImageApi.enqueue(object :Callback<MutableList<ResponseGetRandomImagesItem>>{
-                override fun onResponse(call: Call<MutableList<ResponseGetRandomImagesItem>>, response: Response<MutableList<ResponseGetRandomImagesItem>>) {
+            progressbarMain.visibility = View.VISIBLE
+
+            //Api =>
+            callImageApi.enqueue(object : Callback<ResponseRandomPhotos> {
+                override fun onResponse(
+                    call: Call<ResponseRandomPhotos>,
+                    response: Response<ResponseRandomPhotos>
+                ) {
+
                     if (response.isSuccessful) {
-                        progressbarMain.visibility = View.GONE
-                        txtEmptyState.visibility = View.GONE
-                        recyclerMain.visibility = View.VISIBLE
-                        response.body()?.let {itBody->
+                        response.body()?.let { itBody ->
+
                             if (itBody.isNotEmpty()) {
+
+                                //set Visibility =>
+                                recyclerMain.visibility = View.VISIBLE
+                                txtEmptyState.visibility = View.GONE
+                                progressbarMain.visibility = View.GONE
+
                                 imageAdapter.differ.submitList(itBody)
-                                //RecyclerView =>
                                 recyclerMain.apply {
                                     adapter = imageAdapter
-                                    layoutManager = LinearLayoutManager(this@MainActivity , RecyclerView.VERTICAL , false)
+                                    layoutManager = LinearLayoutManager(
+                                        this@MainActivity,
+                                        RecyclerView.VERTICAL,
+                                        false
+                                    )
                                 }
                             }
+
                         }
                     }
                 }
 
-                override fun onFailure(call: Call<MutableList<ResponseGetRandomImagesItem>>, t: Throwable) {
-                    progressbarMain.visibility = View.GONE
+                override fun onFailure(call: Call<ResponseRandomPhotos>, t: Throwable) {
+                    Log.e("onFailure", "Err: ${t.message}")
+
+                    //set Visibility =>
+                    recyclerMain.visibility = View.GONE
                     txtEmptyState.visibility = View.VISIBLE
-                    Log.e("onFailure" , "ERR : ${t.message}")
+                    progressbarMain.visibility = View.GONE
                 }
 
             })
         }
+
 
     }
 }

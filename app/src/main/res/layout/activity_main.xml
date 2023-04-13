@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:columnCount="2">
+    android:columnCount="2"
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Categorize"
+        android:text="Random Photos"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -34,23 +34,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_categorize">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_blur"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
-            android:layout_weight="1"
-            android:text="blur images"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_Grayscale"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Grayscale images"
+            android:layout_weight="2"
+            android:text="Get List Of New Photos"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -58,19 +48,20 @@
 
     </LinearLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/recycler_main"
-        android:visibility="gone"
         android:layout_marginStart="8dp"
-        tools:listitem="@layout/item_recycler_view"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:listitem="@layout/item_recycler_view" />
 
     <ProgressBar
         android:id="@+id/progressbar_main"
@@ -82,19 +73,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/txt_empty_state"
         android:layout_width="match_parent"
-        android:layout_margin="12dp"
         android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:gravity="center"
         android:text="It Seems Something Went Wrong Please Check Your Internet Connection!"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/txt_empty_state"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
