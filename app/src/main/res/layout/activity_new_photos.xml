@@ -4,88 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".NewPhotosActivity"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="8dp"
     android:background="?attr/backgroundColor">
 
-
     <TextView
-        android:id="@+id/txt_categorize"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_back"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Random Photos"
+        android:id="@+id/txt_new_photos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Photos"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_categorize">
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_list_new_photos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Get List Of New Photos"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
-
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_main"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:id="@+id/recycler_new_photos"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        tools:listitem="@layout/item_recycler_view"
         android:visibility="gone"
+        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:listitem="@layout/item_recycler_view" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_new_photos" />
 
     <ProgressBar
-        android:id="@+id/progressbar_main"
+        android:id="@+id/progressbar_new_photos_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_new_photos" />
 
     <TextView
-        android:id="@+id/txt_empty_state"
+        android:id="@+id/txt_empty_state_new_photos_activity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="12dp"
-        android:gravity="center"
+        android:layout_height="0dp"
         android:text="It Seems Something Went Wrong Please Check Your Internet Connection!"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_margin="12dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txt_new_photos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

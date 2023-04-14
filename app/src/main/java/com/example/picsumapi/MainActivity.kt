@@ -1,12 +1,13 @@
 package com.example.picsumapi
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.picsumapi.adapter.AdapterImage
+import com.example.picsumapi.adapter.AdapterRandomPhotos
 import com.example.picsumapi.databinding.ActivityMainBinding
 import com.example.picsumapi.model.ResponseRandomPhotos
 import com.example.picsumapi.server.ApiClient
@@ -22,8 +23,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     //Adapter =>
-    private val imageAdapter: AdapterImage by lazy {
-        AdapterImage()
+    private val imageAdapter: AdapterRandomPhotos by lazy {
+        AdapterRandomPhotos()
     }
 
     //ApiServices =>
@@ -91,6 +92,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
+
+            //Intent to new photos Activity =>
+            btnListNewPhotos.setOnClickListener() {
+                startActivity(Intent(this@MainActivity, NewPhotosActivity::class.java))
+            }
+
         }
 
 
